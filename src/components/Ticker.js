@@ -3,9 +3,10 @@ import { makeRandomNumber } from "../utils";
 
 function Ticker() {
   const [price, setPrice] = useState(0);
-  const [color, setColor] = useState("black");
+  const [color] = useState("black");
 
   useEffect(() => {
+    //every 1 second, generate a new random price
     const id = setInterval(() => setPrice(makeRandomNumber), 1000);
     return function () {
       clearInterval(id);
